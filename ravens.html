@@ -22,6 +22,13 @@
   .soon{background:var(--panel);border:1px dashed var(--line);border-radius:12px;padding:18px 20px;color:var(--muted)}
   .soon b{color:var(--text)}
   .fine{color:var(--muted);font-size:.85rem}
+  .memories{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+  .mem{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  .mem img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:var(--line)}
+  .mem figcaption{padding:12px 14px 14px;font-size:.92rem}
+  .mem figcaption b{display:block;color:var(--text);margin-bottom:2px}
+  .mem figcaption span{color:var(--muted)}
+  .yr{display:inline-block;color:var(--accent);font-weight:700;font-size:.8rem;letter-spacing:.04em;margin-bottom:4px}
 </style>
 </head>
 <body>
@@ -67,9 +74,21 @@
 
   <section id="memories">
     <h2>Game-day memories</h2>
-    <!-- EDIT: add one block per memory, newest first:
-    <div class="job"><h3>Game or moment</h3><div class="meta">Year &middot; Where</div><p>Your memory.</p></div> -->
-    <div class="soon"><b>Coming soon.</b> Favorite games and stadium visits, with the year and the story.</div>
+    <div class="memories">
+      <figure class="mem">
+        <img style="object-position:50% 78%" src="photos/ravens-purple-road-trip-2015.jpg" alt="Purple t-shirt with a cartoon raven in a propeller plane holding a beer, in front of a Welcome to Denver sign and the Rocky Mountains" loading="lazy">
+        <figcaption><span class="yr">2015</span><b>#PurpleRoadTrip: Denver</b><span>The road-trip shirt from the Ravens fan trip to Denver, September 11&ndash;14, 2015.</span></figcaption>
+      </figure>
+      <figure class="mem">
+        <img style="object-position:50% 80%" src="photos/ravens-cowboys-tickets-2014.jpg" alt="Two tickets for Dallas Cowboys versus Baltimore Ravens at AT&T Stadium, Saturday August 16, 2014" loading="lazy">
+        <figcaption><span class="yr">2014</span><b>Ravens at AT&amp;T Stadium</b><span>Tickets for Cowboys vs. Ravens, Saturday, August 16, 2014, at AT&amp;T Stadium in Arlington, Texas.</span></figcaption>
+      </figure>
+      <figure class="mem">
+        <img src="photos/ravens-super-bowl-xxxv-ball.jpg" alt="Wilson football in a display case marked Super Bowl XXXV, with a card showing Baltimore Ravens 34, New York Giants 7" loading="lazy">
+        <figcaption><span class="yr">Super Bowl XXXV</span><b>The game ball display</b><span>January 28, 2001: Ravens 34, Giants 7. Ray Lewis was named MVP.</span></figcaption>
+      </figure>
+    </div>
+    <p class="fine" style="margin-top:14px">More memories and the stories behind these are coming soon.</p>
   </section>
 
   <section id="traditions">
