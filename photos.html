@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Journal</title>
+<meta name="description" content="A photo journal from my travels.">
+<link rel="stylesheet" href="site.css">
+<style>
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+  .shot{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;cursor:pointer;padding:0;text-align:left;color:inherit;font:inherit;display:block;width:100%}
+  .shot:hover{border-color:var(--accent)}
+  .shot:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .shot img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--line)}
+  .shot figcaption{padding:10px 12px 12px;font-size:.9rem}
+  .shot figcaption small{display:block;color:var(--muted);font-size:.78rem;margin-top:2px}
+  .empty{background:var(--panel);border:1px dashed var(--line);border-radius:12px;padding:22px;color:var(--muted)}
+  .empty b{color:var(--text)}
+  .filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+  .filters button{font:inherit;font-size:.85rem;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 13px;cursor:pointer}
+  .filters button.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  dialog{border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--text);padding:0;max-width:min(94vw,1000px);width:100%}
+  dialog::backdrop{background:#000b}
+  dialog img{display:block;width:100%;max-height:78vh;object-fit:contain;background:#000}
+  .cap{padding:12px 16px 14px;display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+  .cap small{color:var(--muted);display:block}
+  .cap button{font:inherit;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav" aria-label="Site">
+    <a href="index.html">Travel</a>
+    <a href="ravens.html">Ravens</a>
+    <a href="photos.html" aria-current="page">Photos</a>
+    <a href="veterans.html">Veterans</a>
+  </nav>
+  <header>
+    <h1>Photo Journal</h1>
+    <p class="lead">A few frames from the places on the map. Tap a photo to see it larger.</p>
+  </header>
+
+  <section>
+    <div id="filters" class="filters" hidden></div>
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty" hidden><b>Photos coming soon.</b> Check back for pictures from my travels.</div>
+  </section>
+
+  <dialog id="dlg" aria-label="Photo viewer">
+    <img id="dimg" alt="">
+    <div class="cap"><div><span id="dcap"></span><small id="dmeta"></small></div><button type="button" id="dclose">Close</button></div>
+  </dialog>
+
+  <footer>Contact: <a href="mailto:DavidErmer@gmail.com">DavidErmer@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/davidermer">LinkedIn</a></footer>
+</div>
+
+<script>
+/* ADD PHOTOS HERE. Put image files in a folder named "photos" in the repo, then add one line per photo:
+   {file:"photos/lisbon-tram.jpg", caption:"Tram 28 climbing the hill", place:"Lisbon, Portugal", year:2023},
+   Use city-level places only. Strip GPS data from photos before uploading. */
+var PHOTOS = [
+];
+
+(function(){
+  var grid=document.getElementById('grid'), empty=document.getElementById('empty'), filters=document.getElementById('filters');
+  var dlg=document.getElementById('dlg'), dimg=document.getElementById('dimg'), dcap=document.getElementById('dcap'), dmeta=document.getElementById('dmeta');
+  if(!PHOTOS.length){empty.hidden=false;return;}
+  var sorted=PHOTOS.slice().sort(function(a,b){return (b.year||0)-(a.year||0);});
+  var years=[]; sorted.forEach(function(p){if(p.year&&years.indexOf(p.year)<0)years.push(p.year);});
+  var cur=0;
+  function meta(p){return [p.place,p.year].filter(Boolean).join(' · ');}
+  function render(){
+    grid.textContent='';
+    sorted.filter(function(p){return !cur||p.year===cur;}).forEach(function(p){
+      var b=document.createElement('button'); b.type='button'; b.className='shot';
+      var f=document.createElement('figure'); f.style.margin='0';
+      var i=document.createElement('img'); i.src=p.file; i.alt=p.caption||p.place||'Travel photo'; i.loading='lazy';
+      var c=document.createElement('figcaption'); c.textContent=p.caption||''; var s=document.createElement('small'); s.textContent=meta(p); c.appendChild(s);
+      f.appendChild(i); f.appendChild(c); b.appendChild(f);
+      b.addEventListener('click',function(){dimg.src=p.file;dimg.alt=i.alt;dcap.textContent=p.caption||'';dmeta.textContent=meta(p);dlg.showModal();});
+      grid.appendChild(b);
+    });
+  }
+  if(years.length>1){
+    filters.hidden=false;
+    [0].concat(years).forEach(function(y){
+      var b=document.createElement('button'); b.type='button'; b.textContent=y||'All'; if(!y)b.className='on';
+      b.addEventListener('click',function(){cur=y;Array.prototype.forEach.call(filters.children,function(x){x.className=x===b?'on':'';});render();});
+      filters.appendChild(b);
+    });
+  }
+  document.getElementById('dclose').addEventListener('click',function(){dlg.close();});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close();});
+  render();
+})();
+</script>
+</body>
+</html>

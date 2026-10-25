@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Baltimore Ravens Fan Page</title>
+<meta name="description" content="An unofficial fan page for the Baltimore Ravens: franchise history, the greats, and a fan's game-day memories.">
+<link rel="stylesheet" href="site.css">
+<style>
+  :root{--accent:#a68bff;--gold:#c9a227}
+  @media (prefers-color-scheme: light){:root{--accent:#241773;--gold:#8a6d00}}
+  .nav a[aria-current="page"]{color:#fff}
+  header{border-bottom:3px solid var(--accent)}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+  .fact{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 16px 14px}
+  .fact b{display:block;font-size:1.5rem;line-height:1.15;color:var(--accent);letter-spacing:-.01em}
+  .fact span{display:block;color:var(--muted);font-size:.88rem;margin-top:4px}
+  .greats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+  .greats li{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:14px 16px}
+  .greats b{display:block}
+  .greats span{color:var(--muted);font-size:.9rem}
+  .soon{background:var(--panel);border:1px dashed var(--line);border-radius:12px;padding:18px 20px;color:var(--muted)}
+  .soon b{color:var(--text)}
+  .fine{color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav" aria-label="Site">
+    <a href="index.html">Travel</a>
+    <a href="ravens.html" aria-current="page">Ravens</a>
+    <a href="photos.html">Photos</a>
+    <a href="veterans.html">Veterans</a>
+  </nav>
+  <header>
+    <h1>Baltimore Ravens</h1>
+    <p class="tag">Fan page &middot; Purple &amp; black</p>
+    <p class="lead">Franchise history, the players who built it, and my own game-day memories from the stands and the couch.</p>
+  </header>
+
+  <section id="story">
+    <h2>My fan story</h2>
+    <!-- EDIT: replace the box below with your own paragraph(s) -->
+    <div class="soon"><b>Coming soon.</b> How I became a fan and what the team means to me.</div>
+  </section>
+
+  <section id="glance">
+    <h2>The franchise at a glance</h2>
+    <div class="facts">
+      <div class="fact"><b>1996</b><span>First season in Baltimore, after the Browns relocated from Cleveland</span></div>
+      <div class="fact"><b>2 titles</b><span>Super Bowl XXXV (Jan 2001, 34&ndash;7 over the Giants) and XLVII (Feb 2013, 34&ndash;31 over the 49ers)</span></div>
+      <div class="fact"><b>M&amp;T Bank Stadium</b><span>Home field in downtown Baltimore since 1998</span></div>
+      <div class="fact"><b>The Raven</b><span>Named by fan vote, after the Edgar Allan Poe poem. Poe is buried in Baltimore</span></div>
+    </div>
+  </section>
+
+  <section id="greats">
+    <h2>Franchise greats</h2>
+    <ul class="greats">
+      <li><b>Jonathan Ogden</b><span>Left tackle and the first draft pick in franchise history. Pro Football Hall of Fame, class of 2013</span></li>
+      <li><b>Ray Lewis</b><span>Linebacker, Super Bowl XXXV MVP. Hall of Fame, class of 2018</span></li>
+      <li><b>Ed Reed</b><span>Safety and one of the great ball hawks. Hall of Fame, class of 2019</span></li>
+      <li><b>Lamar Jackson</b><span>Quarterback and a two-time NFL MVP, including a unanimous vote in 2019</span></li>
+    </ul>
+    <p class="fine" style="margin-top:14px">My own favorites are coming soon.</p>
+  </section>
+
+  <section id="memories">
+    <h2>Game-day memories</h2>
+    <!-- EDIT: add one block per memory, newest first:
+    <div class="job"><h3>Game or moment</h3><div class="meta">Year &middot; Where</div><p>Your memory.</p></div> -->
+    <div class="soon"><b>Coming soon.</b> Favorite games and stadium visits, with the year and the story.</div>
+  </section>
+
+  <section id="traditions">
+    <h2>Traditions</h2>
+    <!-- EDIT: tailgates, rituals, how you watch games -->
+    <div class="soon"><b>Coming soon.</b> Tailgates, rituals and how I watch the games.</div>
+  </section>
+
+  <footer>Unofficial fan page. Not affiliated with or endorsed by the Baltimore Ravens or the NFL.<br>
+  Contact: <a href="mailto:DavidErmer@gmail.com">DavidErmer@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/davidermer">LinkedIn</a></footer>
+</div>
+</body>
+</html>

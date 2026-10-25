@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Veterans</title>
+<meta name="description" content="Resources, transition tips and a thank-you for those who served.">
+<link rel="stylesheet" href="site.css">
+<style>
+  .help{background:var(--panel);border:1px solid var(--line);border-left:5px solid #e0452a;border-radius:12px;padding:20px 22px}
+  .help h2{margin:0 0 10px;color:var(--text);text-transform:none;letter-spacing:0;font-size:1.25rem}
+  .help p{margin:0 0 8px}
+  .help .big{font-size:1.15rem;font-weight:700}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+  .card{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;color:var(--text)}
+  .card:hover{border-color:var(--accent)}
+  .card:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .card b{display:block;color:var(--accent)}
+  .card span{display:block;color:var(--muted);font-size:.9rem;margin-top:3px}
+  .group{margin:26px 0 10px;font-size:1rem;color:var(--text)}
+  .group:first-of-type{margin-top:0}
+  .tips{margin:0;padding-left:22px}
+  .tips li{margin-bottom:10px}
+  .tips b{color:var(--text)}
+  .tribute{font-size:1.1rem;max-width:620px}
+  .fine{color:var(--muted);font-size:.85rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav" aria-label="Site">
+    <a href="index.html">Travel</a>
+    <a href="ravens.html">Ravens</a>
+    <a href="photos.html">Photos</a>
+    <a href="veterans.html" aria-current="page">Veterans</a>
+  </nav>
+  <header>
+    <h1>Veterans</h1>
+    <p class="lead">A page for those who served: where to get help, where to find the benefits you earned, and a few notes on what comes next.</p>
+  </header>
+
+  <section id="help">
+    <div class="help">
+      <h2>If you are in crisis, help is available now</h2>
+      <p class="big">Dial 988, then press 1</p>
+      <p>Or text <b>838255</b>, or chat online at <a href="https://www.veteranscrisisline.net/">veteranscrisisline.net</a>. The Veterans Crisis Line is for veterans, service members, National Guard and Reserve members, and their families and friends.</p>
+      <p class="fine">If you or someone near you is in immediate danger, call 911.</p>
+    </div>
+  </section>
+
+  <section id="resources">
+    <h2>Resources</h2>
+    <h3 class="group">Benefits and care</h3>
+    <div class="cards">
+      <a class="card" href="https://www.va.gov/"><b>VA.gov</b><span>Health care, disability, education, housing and more, all in one place</span></a>
+      <a class="card" href="https://www.va.gov/health-care/"><b>VA health care</b><span>Check eligibility and apply</span></a>
+      <a class="card" href="https://www.va.gov/education/"><b>GI Bill and education</b><span>Tuition, training and school benefits</span></a>
+      <a class="card" href="https://www.va.gov/find-locations/"><b>Find a VA location</b><span>Medical centers, clinics and Vet Centers near you</span></a>
+    </div>
+    <h3 class="group">Support and community</h3>
+    <div class="cards">
+      <a class="card" href="https://www.militaryonesource.mil/"><b>Military OneSource</b><span>Free, Department of Defense&ndash;funded help with life during and after service</span></a>
+      <a class="card" href="https://veterans.nv.gov/"><b>Nevada Department of Veterans Services</b><span>Veteran Service Officers, state benefits and programs</span></a>
+      <a class="card" href="https://www.dav.org/"><b>DAV</b><span>Disabled American Veterans: free help with benefits claims</span></a>
+      <a class="card" href="https://www.legion.org/"><b>The American Legion</b><span>Service officers, local posts and community</span></a>
+      <a class="card" href="https://www.vfw.org/"><b>VFW</b><span>Veterans of Foreign Wars: advocacy, posts and support</span></a>
+    </div>
+    <h3 class="group">Careers</h3>
+    <div class="cards">
+      <a class="card" href="https://skillbridge.osd.mil/"><b>DoD SkillBridge</b><span>Industry training and internships during your last months of service</span></a>
+      <a class="card" href="https://www.usajobs.gov/"><b>USAJOBS</b><span>Federal jobs. Look under Help for veterans&rsquo; preference and hiring paths</span></a>
+    </div>
+    <p class="fine" style="margin-top:14px">Programs and phone numbers change. Check each site for current details.</p>
+  </section>
+
+  <section id="transition">
+    <h2>Transition tips</h2>
+    <ol class="tips">
+      <li><b>Translate your service into civilian terms.</b> Describe what you did, what you were responsible for and the results, not just your job code or rank.</li>
+      <li><b>Start early.</b> Use your transition program, and look into SkillBridge well before your separation date.</li>
+      <li><b>Know your paperwork.</b> Keep several copies of your DD-214 and service records, in paper and digital form.</li>
+      <li><b>Sign up for VA health care early.</b> Enrolling before you need care is far easier than doing it in a hurry.</li>
+      <li><b>Use veterans&rsquo; preference for federal jobs.</b> Learn how it works on USAJOBS before you apply.</li>
+      <li><b>Build your network.</b> Veteran service organizations and alumni groups are often the fastest route to a real conversation with a hiring manager.</li>
+      <li><b>Give yourself time.</b> The change from a mission-driven team to civilian life is bigger than most people expect. Asking for help is part of the job.</li>
+    </ol>
+  </section>
+
+  <section id="tribute">
+    <h2>Thank you</h2>
+    <p class="tribute">To everyone who raised a hand and took the oath: those still serving, those who came home, and those who did not. Thank you.</p>
+  </section>
+
+  <footer>Contact: <a href="mailto:DavidErmer@gmail.com">DavidErmer@gmail.com</a> &middot; <a href="https://www.linkedin.com/in/davidermer">LinkedIn</a></footer>
+</div>
+</body>
+</html>
